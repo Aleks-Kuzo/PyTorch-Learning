@@ -1,4 +1,4 @@
-# PyTorch Learning
+# PyTorch Learning 
 
 Ноутбуки по изучению PyTorch. Каждый файл — отдельная тема: краткая теория и рабочий код с проверками shape/dtype на каждом шаге.
 
@@ -13,6 +13,7 @@
 | 5 | [`PyTorch5.ipynb`](PyTorch5.ipynb) | Dropout и BatchNorm |
 | 6 | [`PyTorch6.ipynb`](PyTorch6.ipynb) | Свёрточные нейросети (CNN) |
 | 7 | [`PyTorch7.ipynb`](PyTorch7.ipynb) | Архитектура VGG, transfer learning |
+| 8 | [`PyTorch8.ipynb`](PyTorch8.ipynb) | Архитектура ResNet, skip connections |
 
 ## Описание ноутбуков
 
@@ -36,6 +37,9 @@
 
 ### 7. PyTorch7 — архитектура VGG и transfer learning
 Реализация VGG11 вручную, затем универсальный класс `VGG` для всех вариантов семейства (11/13/16/19) через словарь конфигураций слоёв. Использование готовых предобученных моделей из `torchvision.models` с весами `IMAGENET1K` и списком классов ImageNet. Инференс на своём изображении со сравнением трёх вариантов трансформаций (готовые из весов модели, `transforms` v1, `transforms.v2`) и вывод top-предсказаний через `softmax`.
+
+### 8. PyTorch8 — архитектура ResNet
+Реализация ResNet с нуля: пропускные соединения (skip connections), блоки `BasicBlock` и `Bottleneck`, универсальный класс `Resnet` для вариантов 18/34/50/101/152 через словарь конфигураций. Сборка слоёв через `make_layer` с `downsample` для согласования размерностей при сложении `out += identity`. Сравнение с готовой архитектурой из `torchvision.models`.
 
 ## Установка
 
