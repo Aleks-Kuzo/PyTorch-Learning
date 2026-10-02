@@ -1,4 +1,4 @@
-# PyTorch Learning 
+# PyTorch Learning
 
 Ноутбуки по изучению PyTorch. Каждый файл — отдельная тема: краткая теория и рабочий код с проверками shape/dtype на каждом шаге.
 
@@ -14,6 +14,7 @@
 | 6 | [`PyTorch6.ipynb`](PyTorch6.ipynb) | Свёрточные нейросети (CNN) |
 | 7 | [`PyTorch7.ipynb`](PyTorch7.ipynb) | Архитектура VGG, transfer learning |
 | 8 | [`PyTorch8.ipynb`](PyTorch8.ipynb) | Архитектура ResNet, skip connections |
+| 9 | [`PyTorch9.ipynb`](PyTorch9.ipynb) | Архитектура U-Net, семантическая сегментация |
 
 ## Описание ноутбуков
 
@@ -40,6 +41,9 @@
 
 ### 8. PyTorch8 — архитектура ResNet
 Реализация ResNet с нуля: пропускные соединения (skip connections), блоки `BasicBlock` и `Bottleneck`, универсальный класс `Resnet` для вариантов 18/34/50/101/152 через словарь конфигураций. Сборка слоёв через `make_layer` с `downsample` для согласования размерностей при сложении `out += identity`. Сравнение с готовой архитектурой из `torchvision.models`.
+
+### 9. PyTorch9 — архитектура U-Net
+Реализация U-Net для семантической сегментации изображений. Симметричная структура энкодер-декодер через три блока: `DoubleConv` (двойная свёртка + ReLU), `DownSample` (свёртка + `MaxPool2d`, сжатие по пути вниз), `UpSample` (`ConvTranspose2d` + конкатенация со skip-connection с соответствующего уровня энкодера + свёртка). Сборка полной модели с bottleneck-слоем и выходной свёрткой `1×1`.
 
 ## Установка
 
