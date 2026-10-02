@@ -15,6 +15,7 @@
 | 7 | [`PyTorch7.ipynb`](PyTorch7.ipynb) | Архитектура VGG, transfer learning |
 | 8 | [`PyTorch8.ipynb`](PyTorch8.ipynb) | Архитектура ResNet, skip connections |
 | 9 | [`PyTorch9.ipynb`](PyTorch9.ipynb) | Архитектура U-Net, семантическая сегментация |
+| 10 | [`PyTorch10.ipynb`](PyTorch10.ipynb) | Transfer Learning, fine-tuning |
 
 ## Описание ноутбуков
 
@@ -44,6 +45,9 @@
 
 ### 9. PyTorch9 — архитектура U-Net
 Реализация U-Net для семантической сегментации изображений. Симметричная структура энкодер-декодер через три блока: `DoubleConv` (двойная свёртка + ReLU), `DownSample` (свёртка + `MaxPool2d`, сжатие по пути вниз), `UpSample` (`ConvTranspose2d` + конкатенация со skip-connection с соответствующего уровня энкодера + свёртка). Сборка полной модели с bottleneck-слоем и выходной свёрткой `1×1`.
+
+### 10. PyTorch10 — Transfer Learning
+Сравнение подходов к обучению VGG11 на небольшом датасете (`hymenoptera_data`, 2 класса): с нуля (случайные веса, меняем только последний слой / весь классификатор) и с переносом знаний (предобученные веса `IMAGENET1K`). Варианты transfer learning: без заморозки весов, с полной заморозкой `features` и обучением только классификатора, и fine-tuning — разморозка последних слоёв `features` с отдельным (меньшим) learning rate через группы параметров в оптимизаторе.
 
 ## Установка
 
